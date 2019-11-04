@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+        echo_server:
+                build: .
+                ports:
+                        - "2000:65432"
+                depends_on:
+                        - rediska
+
+        rediska:
+                image: redis
+                ports:
+                        - "7000:6379"
+
